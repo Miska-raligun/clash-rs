@@ -1,0 +1,11 @@
+/home/mio/clash-rs/target/debug/deps/libparking_lot_core-b453048a8c5e3b55.rmeta: /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/lib.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/parking_lot.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/spinwait.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/thread_parker/mod.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/util.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/word_lock.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/thread_parker/linux.rs
+
+/home/mio/clash-rs/target/debug/deps/parking_lot_core-b453048a8c5e3b55.d: /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/lib.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/parking_lot.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/spinwait.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/thread_parker/mod.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/util.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/word_lock.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/thread_parker/linux.rs
+
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/lib.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/parking_lot.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/spinwait.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/thread_parker/mod.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/util.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/word_lock.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/parking_lot_core-0.9.10/src/thread_parker/linux.rs:

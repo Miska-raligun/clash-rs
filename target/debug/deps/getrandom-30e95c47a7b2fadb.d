@@ -1,0 +1,12 @@
+/home/mio/clash-rs/target/debug/deps/libgetrandom-30e95c47a7b2fadb.rmeta: /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/lib.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/error.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/util.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/../README.md /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/use_file.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/../util_libc.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/linux_android_with_fallback.rs
+
+/home/mio/clash-rs/target/debug/deps/getrandom-30e95c47a7b2fadb.d: /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/lib.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/error.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/util.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/../README.md /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/use_file.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/../util_libc.rs /home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/linux_android_with_fallback.rs
+
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/lib.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/error.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/util.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/../README.md:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/use_file.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/../util_libc.rs:
+/home/mio/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.3.3/src/backends/linux_android_with_fallback.rs:
