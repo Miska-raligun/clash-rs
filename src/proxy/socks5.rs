@@ -1,7 +1,10 @@
+
 use std::sync::Arc;
 use tokio::net::{TcpListener, TcpStream};
+use tokio::io::{AsyncReadExt, AsyncWriteExt, copy_bidirectional};
 use crate::proxy::proxy_manager::ProxyManager;
 use crate::proxy::runtime::ProxyRuntime;
+use crate::proxy::outbound::OutboundHandler;
 
 pub async fn start_socks5_server(
     addr: &str,
@@ -29,8 +32,6 @@ async fn handle_client(
     manager: Arc<ProxyManager>,
     runtime: Arc<ProxyRuntime>,
 ) -> std::io::Result<()> {
-    use tokio::io::{AsyncReadExt, AsyncWriteExt};
-
     let mut buf = [0u8; 262];
     client.read_exact(&mut buf[..2]).await?;
     let nmethods = buf[1] as usize;
@@ -59,19 +60,20 @@ async fn handle_client(
     client.read_exact(&mut buf[..2]).await?;
     let port = u16::from_be_bytes(buf[..2].try_into().unwrap());
 
-    // ✅ 每次从 runtime 动态选择 handler
     let current_group = runtime
-    .get_group("🔰国外流量")
-    .expect("[socks5] runtime missing Proxy group");
+        .get_group("🔰国外流量")
+        .expect("[socks5] runtime missing Proxy group");
+    println!("[SOCKS5] Received request to connect to {}:{}", addr, port);
     let current_name = current_group.get();
-    let handler = manager.get(&current_name).unwrap_or_else(|| {
-        panic!("[SOCKS5] No handler found for proxy: {}", current_name)
-    });
+    println!("[SOCKS5] 当前使用节点：{}", current_name);
+    let handler = manager.get(&current_name)
+        .unwrap_or_else(|| panic!("[SOCKS5] No handler found for proxy: {}", current_name));
     let mut remote = handler.connect(&addr, port).await?;
 
     client.write_all(&[0x05, 0x00, 0x00, 0x01, 0, 0, 0, 0, 0, 0]).await?;
 
-    tokio::io::copy_bidirectional(&mut client, &mut remote).await?;
+    let (n1, n2) = tokio::io::copy_bidirectional(&mut client, &mut remote).await?;
+    println!("[SOCKS5] Relay complete: client → remote = {} bytes, remote → client = {} bytes", n1, n2);
+
     Ok(())
 }
-

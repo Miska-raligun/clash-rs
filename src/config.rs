@@ -1,4 +1,5 @@
 use serde::Deserialize;
+use std::collections::HashMap;
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
@@ -34,6 +35,8 @@ pub enum Proxy {
         server: String,
         port: u16,
         password: String,
+        #[serde(default)]
+        sni: Option<String>,
     },
     #[serde(rename = "vmess")]
     VMess {
@@ -41,6 +44,18 @@ pub enum Proxy {
         server: String,
         port: u16,
         uuid: String,
+
+        #[serde(rename = "alterId")]     
+        #[serde(default)]
+        alter_id: Option<u32>,
+
+        cipher: Option<String>,
+        udp: Option<bool>,
+        network: Option<String>,
+        #[serde(rename = "ws-path")]
+        ws_path: Option<String>,
+        #[serde(rename = "ws-headers")]
+        ws_headers: Option<HashMap<String, String>>,
     },
     #[serde(other)]
     Unknown,

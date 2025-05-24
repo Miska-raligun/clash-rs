@@ -12,4 +12,8 @@ impl OutboundHandler for DirectProxy {
         let stream = TcpStream::connect(target).await?;
         Ok(Box::new(stream))
     }
+
+    fn as_any(&self) -> &dyn std::any::Any {
+        self
+    }
 }

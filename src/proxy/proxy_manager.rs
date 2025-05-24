@@ -6,6 +6,7 @@ use crate::proxy::outbound::{AnyStream, OutboundHandler};
 use crate::config::{Config, Proxy};
 use crate::proxy::direct::DirectProxy;
 use crate::proxy::vmess::VmessProxy;
+use crate::proxy::trojan::TrojanProxy;
 use uuid::Uuid;
 
 pub struct ProxyManager {
@@ -18,14 +19,35 @@ impl ProxyManager {
 
         for proxy in &config.proxies {
             match proxy {
-                Proxy::Trojan { name, .. } => {
-                    handlers.insert(name.clone(), Arc::new(FakeProxy));
-                }
+                Proxy::Trojan { name, server, port, password, sni } => {
+                        let handler = TrojanProxy::new(name.clone(), server.clone(), *port, password.clone(), sni.clone());
+                        handlers.insert(name.clone(), Arc::new(handler));
+                    }
 
-                Proxy::VMess { name, server, port, uuid } => {
-                    let uuid = Uuid::parse_str(uuid).expect("Invalid VMess UUID");
-                    let vmess = VmessProxy::new(name.clone(), server.clone(), *port, uuid);
-                    handlers.insert(name.clone(), Arc::new(vmess));
+                Proxy::VMess {
+                    name,
+                    server,
+                    port,
+                    uuid,
+                    alter_id,
+                    network,
+                    ws_path,
+                    ws_headers,
+                    ..
+                } => {
+                    let uuid = Uuid::parse_str(uuid).unwrap();
+                    let proxy = VmessProxy {
+                        name: name.clone(),
+                        server: server.clone(),
+                        port: *port,
+                        uuid,
+                        alter_id: alter_id.unwrap_or(0),
+                        network: network.clone(),
+                        ws_path: ws_path.clone(),
+                        ws_host: ws_headers.as_ref().and_then(|h| h.get("Host").cloned()),
+                        
+                    };
+                    handlers.insert(name.clone(), Arc::new(proxy));
                 }
 
                 Proxy::Unknown => {}

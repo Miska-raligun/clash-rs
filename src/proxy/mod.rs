@@ -6,3 +6,5 @@ pub mod proxy_manager;
 pub mod runtime;
 pub mod http;
 pub mod vmess;
+pub mod ws_wrapper;
+pub mod trojan;

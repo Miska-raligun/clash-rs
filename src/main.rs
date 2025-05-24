@@ -14,7 +14,7 @@ async fn main() {
     let manager = Arc::new(ProxyManager::new(&config));
     let runtime = Arc::new(ProxyRuntime::new());
 
-    // 注册 proxy-group[1] 默认项
+    // 注册 proxy-group[1] 
     let (group_name, proxy_candidates) = if let Some(group) = config.proxy_groups.get(1) {
         let default_proxy = group
             .proxies

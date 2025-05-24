@@ -11,4 +11,7 @@ impl OutboundHandler for FakeProxy {
         let stream = TcpStream::connect(format!("{}:{}", address, port)).await?;
         Ok(Box::new(stream))
     }
+    fn as_any(&self) -> &dyn std::any::Any {
+        self
+    }
 }
